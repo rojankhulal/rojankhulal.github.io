@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Departments | Mahendra Higher Secondary School</title>
+    <style>body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+  }
+  
+  header {
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+  }
+  
+  .department {
+      display: flex;
+      margin: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+  }
+  
+  .department-header {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+  }
+  
+  .department-content {
+      flex: 1;
+      padding: 20px;
+  }
+  
+  .department-image img {
+      width: 100%; 
+  }
+  
+  .toggle-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+  }
+  
+  .toggle-button:hover {
+      background-color: #0056b3;
+  }
+  
+  footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+  }</style>
+</head>
+<body>
+
+    <header>
+        <h1>Mahendra Higher Secondary School Departments</h1>
+    </header>
+
+    <section class="department" id="science">
+        <div class="department-header">
+            <h2>Science Department</h2>
+            <button class="toggle-button" onclick="toggleContent('science')">See More</button>
+        </div>
+        <div class="department-content" id="science-content" style="display: none;">
+          <p>The Science Department at Mahendra Higher Secondary School is dedicated to fostering a passion for scientific inquiry and discovery. Our curriculum is designed to provide students with a strong foundation in various scientific disciplines, including physics, chemistry, and biology. Through hands-on experiments and engaging projects, students develop critical thinking skills and a deep appreciation for the natural world.</p>
+        </div>
+        <div class="department-image">
+            <img src="science.jpg" alt="Science Department Image">
+        </div>
+    </section>
+
+    <section class="department" id="management">
+        <div class="department-header">
+            <h2>Management Department</h2>
+            <button class="toggle-button" onclick="toggleContent('management')">See More</button>
+        </div>
+        <div class="department-content" id="management-content" style="display: none;">
+          <p>The Management Department prepares students for leadership roles in the business world. Our programs focus on developing strategic thinking, effective communication, and problem-solving skills. Students gain practical knowledge in areas such as finance, marketing, and organizational behavior. With a commitment to ethical business practices, the Management Department equips students with the tools needed to excel in dynamic and competitive environments.</p>
+        </div>
+        <div class="department-image">
+            <img src="management.jpg" alt="Management Department Image">
+        </div>
+    </section>
+
+    <section class="department" id="humanities">
+        <div class="department-header">
+            <h2>Humanities Department</h2>
+            <button class="toggle-button" onclick="toggleContent('humanities')">See More</button>
+        </div>
+        <div class="department-content" id="humanities-content" style="display: none;">
+          <p>The Humanities Department at Mahendra Higher Secondary School explores the rich tapestry of human culture, history, literature, and philosophy. Through engaging courses and thought-provoking discussions, students develop a deep understanding of the human experience. Our programs emphasize critical analysis, effective communication, and cultural awareness. Graduates from the Humanities Department are well-rounded individuals ready to contribute meaningfully to society.</p>
+        </div>
+        <div class="department-image">
+            <img src="humanities.jpg" alt="Humanities Department Image">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Mahendra Higher Secondary School. All rights reserved.</p>
+    </footer>
+
+    <script>
+    function toggleContent(departmentId) {
+      var content = document.getElementById(departmentId + "-content");
+      if (content.style.display === "none" || content.style.display === "") {
+          content.style.display = "block";
+      } else {
+          content.style.display = "none";
+      }
+  }</script>
+</body>
+</html>
