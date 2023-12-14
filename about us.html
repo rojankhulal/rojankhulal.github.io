@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Mahendra Higher Secondary School</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: 110%;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .about {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .person {
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            margin: 10px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .person:hover {
+            transform: scale(1.1);
+        }
+
+        .person img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .person .content {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: auto) {
+            .about {
+                flex-direction: column; 
+                align-items: center;
+            }
+
+            .person {
+                width: 80%; 
+                margin: 10px auto; 
+            }
+        }
+
+        .enlarged {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .enlarged .person {
+            width: 60%;
+            margin: 0;
+        }
+
+        .enlarged img {
+            width: 100%;
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+            border-bottom: none;
+        }
+
+        .enlarged .content {
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: justify;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <section class="about">
+        <div class="person" onclick="enlargeBlock(this)">
+            <img src="principal.jpg" alt="Principal Image">
+            <div class="content">
+                <h2>Message from the Principal</h2>
+                <p>Welcome to Mahendra Higher Secondary School, where we are committed to providing a nurturing environment for academic excellence and personal growth. Our dedicated staff and faculty are here to guide and support students on their educational journey.</p>
+            </div>
+        </div>
+
+        <div class="person" onclick="enlargeBlock(this)">
+            <img src="department head.jpg" alt="Department Head Image">
+            <div class="content">
+                <h2>Message from the Department Head</h2>
+                <p>As the head of the Science Department, I am excited to lead a team of passionate educators. Our department is focused on delivering high-quality education, fostering innovation, and preparing students for success in their chosen fields.</p>
+            </div>
+        </div>
+
+        <div class="person" onclick="enlargeBlock(this)">
+            <img src="student.jpg" alt="Student Image">
+            <div class="content">
+                <h2>Message from Student</h2>
+                <p>At Mahendra Higher Secondary School, students are not just learners; they are explorers, creators, and future leaders. Our vibrant community of students is driven by curiosity and a thirst for knowledge. Join us in the journey of discovery!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Mahendra Higher Secondary School. All rights reserved.</p>
+    </footer>
+
+    <div class="enlarged" onclick="shrinkBlock(this)">
+    </div>
+
+    <script>
+        function enlargeBlock(element) {
+            var enlargedView = document.querySelector('.enlarged');
+            enlargedView.innerHTML = element.innerHTML;
+            enlargedView.style.display = 'flex';
+            document.addEventListener('keydown', handleKeyDown);
+        }
+
+        function shrinkBlock(element) {
+            element.style.display = 'none';
+            document.removeEventListener('keydown', handleKeyDown);
+        }
+
+        function handleKeyDown(event) {
+            if (event.key === 'Escape') {
+                shrinkBlock(document.querySelector('.enlarged'));
+            }
+        }
+    </script>
+</body>
+</html>
